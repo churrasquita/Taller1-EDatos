@@ -1,2 +1,10 @@
 # Taller1-EDatos
-Taller 1: Sistema de gestión de información académica para la universidad.
+Sistema de gestión de información académica para la universidad. El sistema
+implementa las siguientes funcionalidades:
+• Gestión de alumnos: Registro, búsqueda y eliminación de alumnos.
+• Gestión de cursos: Creación, búsqueda y eliminación de cursos.
+• Inscripción de cursos: Inscribir a alumnos en cursos. También se debe poder suprimir la
+inscripción a estos.
+• Gestión de notas: Asignación de notas a alumnos en cursos específicos.
+• Reportes: Consultar la información de un alumno (cursos inscritos y notas) y calcular
+promedios de notas por curso y el promedio general del alumno.
