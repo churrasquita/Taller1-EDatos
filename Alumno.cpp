@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Alumno::Alumno(string id, string nombre, string apellido, string carrera, string ingreso){
+Alumno::Alumno(int id, string nombre, string apellido, string carrera, string ingreso){
     this->id=id;
     this->nombre=nombre;
     this->apellido=apellido;

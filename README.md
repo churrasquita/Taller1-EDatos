@@ -8,3 +8,8 @@ inscripción a estos.
 • Gestión de notas: Asignación de notas a alumnos en cursos específicos.
 • Reportes: Consultar la información de un alumno (cursos inscritos y notas) y calcular
 promedios de notas por curso y el promedio general del alumno.
+
+<img align="rigth" width="200px" alt="gif" src="https://media1.tenor.com/m/8wBCqZH60U8AAAAC/computer-cat.gif">
+
+
+
