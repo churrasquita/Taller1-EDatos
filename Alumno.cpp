@@ -12,5 +12,8 @@ Alumno::Alumno(int id, string nombre, string apellido, string carrera, string in
 }
 
 void Alumno::toString(){
-    std::cout<<"id: "<<id<<" /Nombre: "<<nombre<<" /Apellido: "<<maxEstudiantes<<" /Carrera:"<< carrera<<"/Año ingreso: "<<ingreso<<std::endl;
+    std::cout<<"id: "<<id<<" /Nombre: "<<nombre<<" /Apellido: "<<apellido<<" /Carrera:"<< carrera<<"/Ano ingreso: "<<ingreso<<std::endl;
+}
+Alumno:: ~Alumno(){
+   //Por incorporar 
 }

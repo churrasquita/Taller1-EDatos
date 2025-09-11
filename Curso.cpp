@@ -16,3 +16,7 @@ std::string Curso::getProfesor(){ return profesor;}
 void Curso::toString(){
     std::cout<<"id: "<<id<<" /Curso: "<<nombre<<" /Máx estudiantes: "<<maxEstudiantes<<" /Carrera:"<< carrera<<"/Profesor: "<<profesor<<std::endl;
 }
+Curso::~Curso(){
+    std::cout<<"Curso eliminado"<<std::endl;
+ //por completar
+}

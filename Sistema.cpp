@@ -1,6 +1,9 @@
 #include<iostream>
 #include "Alumno.h"
 #include "Curso.h"
+#include "Nota.h"
+#include "NodoAlumno.h"
+
 
 using namespace std;
 void eliminarCurso(){
@@ -17,15 +20,15 @@ void registrarCurso(){
     string carrera;
     string profesor;
     cout<<"Ingrese los datos del curso: "<<endl;
-    cout<<"- id: "<<endl;
+    cout<<"- id: ";
     cin>>id;
-    cout<<"- Nombre: "<<endl;
+    cout<<"- Nombre: ";
     cin>>nombre;
-    cout<<"- Maxima cantidad de alumnos: "<<endl;
+    cout<<"- Maxima cantidad de alumnos: ";
     cin>>maxAlumnos;
-    cout<<"- Carrera: "<<endl;
+    cout<<"- Carrera: ";
     cin>>carrera;
-    cout<<"- Profesor: "<<endl;
+    cout<<"- Profesor: ";
     cin>>profesor;
     Curso* nuevo = new Curso(id,maxAlumnos,nombre, carrera, profesor);
     cout<<"Curso registrado!"<<endl;
@@ -40,15 +43,15 @@ void registrarAlumno(){
     string carrera;
     string fechaIngreso;
     cout<<"Ingrese los datos del alumno: "<<endl;
-    cout<<"- id: "<<endl;
+    cout<<"- id: ";
     cin>>id;
-    cout<<"- Nombre: "<<endl;
+    cout<<"- Nombre: ";
     cin>>nombre;
-    cout<<"- Apellido: "<<endl;
+    cout<<"- Apellido: ";
     cin>>apellido;
-    cout<<"- Carrera: "<<endl;
+    cout<<"- Carrera: ";
     cin>>carrera;
-    cout<<"- Fecha de ingreso: "<<endl;
+    cout<<"- Fecha de ingreso: ";
     cin>>fechaIngreso;
     Alumno* nuevo = new Alumno(id,nombre,apellido, carrera, fechaIngreso);
     cout<<"Alumno registrado!"<<endl;
@@ -168,6 +171,7 @@ int main(){
         cout<<"3) Inscripciones"<<endl;
         cout<<"4) Notas"<<endl;
         cout<<"5) Consultas y reportes"<<endl;
+        cout<<"6) Salir del sistema"<<endl;
         cout<<"Opcion: ";
         cin>> op;
         cout<<endl;
@@ -182,4 +186,4 @@ int main(){
     }
     cout<<"Gracias por utilizar el sistema :)!"<<endl;
     return 0;
-}
+}   
