@@ -17,3 +17,8 @@ void Alumno::toString(){
 Alumno:: ~Alumno(){
    //Por incorporar 
 }
+std::string Alumno::getNombre(){return nombre;}
+std::string Alumno::getApellido(){return apellido;} 
+std::string Alumno::getCarrera(){return carrera;}
+std::string Alumno::getIngreso(){return ingreso;}
+int Alumno:: getId(){return id;}

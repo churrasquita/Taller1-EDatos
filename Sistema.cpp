@@ -3,7 +3,7 @@
 #include "Curso.h"
 #include "Nota.h"
 #include "NodoAlumno.h"
-
+#include "ListaAlumnos.h"
 
 using namespace std;
 void eliminarCurso(){

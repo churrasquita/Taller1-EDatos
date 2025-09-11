@@ -4,7 +4,7 @@ class Nota{
     private:
         double nota;
     public:
-        Nota(int valor);
+        Nota(double valor);
         double getNota();
         void setNota(double nota);
         ~Nota();

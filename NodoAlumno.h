@@ -8,6 +8,6 @@ class NodoAlumno{
         NodoAlumno(Alumno& alumno);
         NodoAlumno* getSiguiente();
         Alumno* getAlumno();
-        void setSiguiente(Alumno& alumno);
+        void setSiguiente(NodoAlumno* alumno);
         ~NodoAlumno();
-}
+};
