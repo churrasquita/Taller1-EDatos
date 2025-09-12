@@ -78,3 +78,19 @@ void ListaAlumnos:: buscarAlumnoNombre(std::string nombre){
         std::cout<<"No existen alumnos con ese nombre."<<std::endl;
     }
 }
+bool ListaAlumnos:: eliminarInscripciones(int idAlumno){
+    if(head == nullptr) return false;
+    NodoAlumno* aux = head;
+    NodoAlumno* aux2 = nullptr;
+
+    while(aux!= nullptr && aux->getAlumno()->getId() != idAlumno){
+        aux2 = aux;
+        aux= aux->getSiguiente();
+    }
+    if (aux == nullptr){return false;}
+    if(aux2 ==nullptr){head= aux-> getSiguiente();}
+    else{ aux2->setSiguiente(aux->getSiguiente());}
+
+    delete aux;
+    return true;
+}

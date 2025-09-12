@@ -1,6 +1,5 @@
 #pragma once
 #include "NodoAlumno.h"
-#include "Alumno.h"
 #include <string>
 #include <iostream>
 
@@ -13,5 +12,6 @@ class ListaAlumnos{
         bool eliminarAlumno(int id);
         Alumno* buscarAlumnoId(int id);
         void buscarAlumnoNombre(std::string nombre);
+        bool eliminarInscripciones(int idAlumno);
         ~ListaAlumnos();
 };

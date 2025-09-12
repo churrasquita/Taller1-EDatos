@@ -175,6 +175,48 @@ void gestionarInscripciones(){
         cout<<"Opcion: ";
         cin>> op;
         cout<<endl;
+        if(op == 1){
+            int id;
+            cout<<"Ingrese el id del alumno a inscribir: ";
+            cin>>id;
+            Alumno* alumno = alumnos.buscarAlumnoId(id);
+            if(alumno == nullptr){
+                cout<<"El alumno no existe."<<endl;
+            } else{
+                int idCurso;
+                cout<<"Ingrese el id del curso a inscribir: ";
+                cin>>idCurso;
+                Curso* curso = cursos.buscarCursoId(idCurso);
+                if(curso == nullptr){
+                    cout<<"El curso no existe."<<endl;
+                } else {
+                    curso->inscribirAlumno(alumno);
+                    cout<<"Alumno inscrito con exito!"<<endl;
+                }
+            }
+        }else if(op == 2){
+            int id;
+            cout<<"Ingrese el id del alumno a eliminar: ";
+            cin>>id;
+            Alumno* alumno = alumnos.buscarAlumnoId(id);
+            if(alumno == nullptr){
+                cout<<"El alumno no existe."<<endl;
+            } else{
+                int idCurso;
+                cout<<"Ingrese el id del curso a aliminar: ";
+                cin>>idCurso;
+                Curso* curso = cursos.buscarCursoId(idCurso);
+                if(curso == nullptr){
+                    cout<<"El curso no existe."<<endl;
+                } else {
+                    bool realizado = curso->eliminarAlumnoCurso(alumno);
+                    if(realizado){cout<<"Alumno eliminado con exito!"<<endl;}
+                    else cout<<"El alumno no está inscrito en ese curso."<<endl;
+                }   
+            }
+
+        }
+
     }
     cout<<"Retornando... "<<endl;
 }

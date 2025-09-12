@@ -1,6 +1,5 @@
 #pragma once
 #include "NodoCurso.h"
-#include "Curso.h"
 #include <string>
 #include <iostream>
 

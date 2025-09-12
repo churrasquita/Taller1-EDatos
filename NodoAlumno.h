@@ -1,5 +1,5 @@
 #pragma once
-#include "Alumno.h"
+class Alumno;
 class NodoAlumno{
     private:
         Alumno* alumno;

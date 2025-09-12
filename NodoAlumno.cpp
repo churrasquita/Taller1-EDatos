@@ -1,7 +1,6 @@
-#include "Alumno.h"
 #include "NodoAlumno.h"
 #include <string>
-#include <iostream>
+#include "Alumno.h"
 
 NodoAlumno::NodoAlumno(Alumno* alumno){
     this->alumno= alumno;
