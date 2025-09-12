@@ -28,31 +28,29 @@ ListaAlumnos::~ListaAlumnos(){
         aux = aux->getSiguiente();
         delete aux2;
     }
-    std::cout<<"Alumnos eliminados."<<std::endl;
 }
 
-void ListaAlumnos:: eliminarAlumno(int id){
+bool ListaAlumnos:: eliminarAlumno(int id){
     if(head == nullptr){
-        std::cout<<"No existen alumnos que eliminar"<<std::endl;
-        return;
+        return false;
     }
     NodoAlumno* aux = head;
     NodoAlumno* aux2 = nullptr;
 
-    while(aux!= nullptr && aux->getAlumno()->getId() != id){
-        aux2 = aux;
-        aux = aux -> getSiguiente(); 
+    while(aux!= nullptr && aux->getAlumno()->getId() != id) {
+       aux2=aux;
+       aux = aux-> getSiguiente();
     }
     if(aux == nullptr){
-        std:: cout<<"Alumno no encontrado"<<std::endl;
-        return;
-    }if(aux2 == nullptr){
+        return false;
+    }
+    if(aux2 == nullptr){
         head = aux->getSiguiente();
     }else{
         aux2 ->setSiguiente(aux->getSiguiente());
     }
     delete aux;
-    std:: cout<<"Se ha eliminado el alumno."<<std::endl;
+    return true;
 }
 
 Alumno* ListaAlumnos:: buscarAlumnoId(int id){

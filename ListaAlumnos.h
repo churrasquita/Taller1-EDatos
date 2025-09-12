@@ -10,7 +10,7 @@ class ListaAlumnos{
     public:
         ListaAlumnos();
         void insertarAlumno(Alumno* alumno);
-        void eliminarAlumno(int id);
+        bool eliminarAlumno(int id);
         Alumno* buscarAlumnoId(int id);
         void buscarAlumnoNombre(std::string nombre);
         ~ListaAlumnos();

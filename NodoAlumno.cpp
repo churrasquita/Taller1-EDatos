@@ -11,7 +11,6 @@ NodoAlumno* NodoAlumno::getSiguiente(){ return this-> siguiente;}
 void NodoAlumno::setSiguiente(NodoAlumno* alumno){this->siguiente = alumno;}
 Alumno* NodoAlumno:: getAlumno(){return this->alumno;}
 NodoAlumno:: ~NodoAlumno(){
-    std::cout << "Alumno eliminado." << std::endl;
     delete alumno;
     alumno = nullptr; 
 }

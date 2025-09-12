@@ -4,17 +4,48 @@
 #include "Nota.h"
 #include "NodoAlumno.h"
 #include "ListaAlumnos.h"
-
+#include "NodoCurso.h"
+#include "ListaCursos.h"
 using namespace std;
 
 ListaAlumnos alumnos = ListaAlumnos();
+ListaCursos cursos = ListaCursos();
 
 void eliminarCurso(){
-    //POR COMPLETAR
+    int idBuscar;
+    cout<<"Ingrese el id del curso a eliminar: "<<endl;
+    cin>>idBuscar;
+    bool eliminado = cursos.eliminarCurso(idBuscar);
+    if(eliminado){
+        cout<<"El curso pudo ser eliminado con exito!!! (id: "<<idBuscar<<")"<<endl;
+    } else{
+        cout<<"No se pudo eliminar el curso (id: "<<idBuscar<<")"<<endl;
+    }
 }
 void buscarCurso(){
-    //POR COMPLETAR
+    string param;
+    cout<<"Desea buscar por id o nombre? ";
+    cin>>param;
+    while(param != "id" && param != "nombre"){
+        cout<<"¿Desea buscar por id o nombre?"<<endl;
+        cin>>param;
+    }
+    if(param == "id"){
+        cout<<"Ingrese id a buscar: ";
+        int id;cin>>id;
+        Curso* curso = cursos.buscarCursoId(id);
+        if(curso == nullptr){
+            cout<<"El curso no existe."<<endl;
+        } else{
+            curso->toString();
+        }
+    }else if(param =="nombre"){
+        cout<<"Ingrese nombre a buscar: ";
+        string nombre;cin>>nombre;
+        cursos.buscarCursoNombre(nombre); 
+    }
 }
+
 void registrarCurso(){
     // falta control de errores
     int maxAlumnos;
@@ -31,8 +62,8 @@ void registrarCurso(){
     cout<<"- Profesor: ";
     cin>>profesor;
     Curso* nuevo = new Curso(maxAlumnos,nombre, carrera, profesor);
+    cursos.insertarCurso(nuevo);
     cout<<"Curso registrado!"<<endl;
-
 }
 
 void registrarAlumno(){
@@ -84,8 +115,12 @@ void eliminarAlumno(){
     int idBuscar;
     cout<<"Ingrese el id del alumno a eliminar: "<<endl;
     cin>>idBuscar;
-    bool encontrado;
-    //POR COMPLETAR
+    bool eliminado = alumnos.eliminarAlumno(idBuscar);
+    if(eliminado){
+        cout<<"El alumno pudo ser eliminado con exito!!! (id: "<<idBuscar<<")"<<endl;
+    } else{
+        cout<<"No se pudo eliminar el alumno (id: "<<idBuscar<<")"<<endl;
+    }
 }
 
 void gestionarAlumnos(){

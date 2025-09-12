@@ -17,5 +17,5 @@ class Alumno{
         std::string getCarrera();
         std::string getIngreso();
         void toString();
-        ~Alumno(); //destructor
+        ~Alumno(); 
 };
