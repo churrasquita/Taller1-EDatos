@@ -3,8 +3,8 @@
 #include <string>
 #include <iostream>
 
-NodoAlumno::NodoAlumno(Alumno& alumno){
-    this->alumno= &alumno;
+NodoAlumno::NodoAlumno(Alumno* alumno){
+    this->alumno= alumno;
     this->siguiente=nullptr;
 }
 NodoAlumno* NodoAlumno::getSiguiente(){ return this-> siguiente;}

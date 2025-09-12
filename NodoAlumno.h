@@ -5,7 +5,7 @@ class NodoAlumno{
         Alumno* alumno;
         NodoAlumno* siguiente;
     public:
-        NodoAlumno(Alumno& alumno);
+        NodoAlumno(Alumno* alumno);
         NodoAlumno* getSiguiente();
         Alumno* getAlumno();
         void setSiguiente(NodoAlumno* alumno);

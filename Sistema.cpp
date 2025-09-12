@@ -6,6 +6,9 @@
 #include "ListaAlumnos.h"
 
 using namespace std;
+
+ListaAlumnos alumnos = ListaAlumnos();
+
 void eliminarCurso(){
     //POR COMPLETAR
 }
@@ -14,14 +17,11 @@ void buscarCurso(){
 }
 void registrarCurso(){
     // falta control de errores
-    int id;
     int maxAlumnos;
     string nombre;
     string carrera;
     string profesor;
     cout<<"Ingrese los datos del curso: "<<endl;
-    cout<<"- id: ";
-    cin>>id;
     cout<<"- Nombre: ";
     cin>>nombre;
     cout<<"- Maxima cantidad de alumnos: ";
@@ -30,21 +30,18 @@ void registrarCurso(){
     cin>>carrera;
     cout<<"- Profesor: ";
     cin>>profesor;
-    Curso* nuevo = new Curso(id,maxAlumnos,nombre, carrera, profesor);
+    Curso* nuevo = new Curso(maxAlumnos,nombre, carrera, profesor);
     cout<<"Curso registrado!"<<endl;
 
 }
 
 void registrarAlumno(){
     // REVISAR CONTROL ERRORES
-    int id;
     string nombre;
     string apellido;
     string carrera;
     string fechaIngreso;
     cout<<"Ingrese los datos del alumno: "<<endl;
-    cout<<"- id: ";
-    cin>>id;
     cout<<"- Nombre: ";
     cin>>nombre;
     cout<<"- Apellido: ";
@@ -53,13 +50,36 @@ void registrarAlumno(){
     cin>>carrera;
     cout<<"- Fecha de ingreso: ";
     cin>>fechaIngreso;
-    Alumno* nuevo = new Alumno(id,nombre,apellido, carrera, fechaIngreso);
+    Alumno* nuevo = new Alumno(nombre,apellido, carrera, fechaIngreso);
     cout<<"Alumno registrado!"<<endl;
+
+    alumnos.insertarAlumno(nuevo);
 }
 
 void buscarAlumno(){
-    //POR COMPLETAR
+    string param;
+    cout<<"Desea buscar por id o nombre? ";
+    cin>>param;
+    while(param != "id" && param != "nombre"){
+        cout<<"¿Desea buscar por id o nombre?"<<endl;
+        cin>>param;
+    }
+    if(param == "id"){
+        cout<<"Ingrese id a buscar: ";
+        int id;cin>>id;
+        Alumno* alumno = alumnos.buscarAlumnoId(id);
+        if(alumno == nullptr){
+            cout<<"El alumno no existe."<<endl;
+        } else{
+            alumno->toString();
+        }
+    }else if(param =="nombre"){
+        cout<<"Ingrese nombre a buscar: ";
+        string nombre;cin>>nombre;
+        alumnos.buscarAlumnoNombre(nombre); 
+    }
 }
+
 void eliminarAlumno(){
     int idBuscar;
     cout<<"Ingrese el id del alumno a eliminar: "<<endl;

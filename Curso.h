@@ -8,9 +8,10 @@ class Curso{
         std::string nombre;
         std::string carrera;
         std::string profesor;
+        static int contador;
        
     public:
-        Curso(int id, int maxEstudiantes, std::string nombre, std::string carrera, std::string profesor);
+        Curso(int maxEstudiantes, std::string nombre, std::string carrera, std::string profesor);
         int getId();
         int getMaxEst();
         std::string getNombre();

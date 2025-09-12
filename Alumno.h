@@ -8,8 +8,9 @@ class Alumno{
         std::string apellido;
         std::string carrera;
         std::string ingreso;
+        static int contador;
     public:
-        Alumno(int id, std::string nombre, std:: string apellido, std:: string carrera, std:: string ingreso);
+        Alumno(std::string nombre, std:: string apellido, std:: string carrera, std:: string ingreso);
         int getId();
         std::string getNombre();
         std::string getApellido();

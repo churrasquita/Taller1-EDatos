@@ -1,8 +1,10 @@
 #include "Curso.h"
 #include <string>
 #include <iostream>
-Curso::Curso(int id, int maxEstudiantes, std::string nombre, std::string carrera, std::string profesor){
-    this->id = id;
+
+int Curso::contador=0;
+Curso::Curso(int maxEstudiantes, std::string nombre, std::string carrera, std::string profesor){
+    this->id= ++contador;
     this->maxEstudiantes = maxEstudiantes;
     this->nombre = nombre;
     this->carrera = carrera;

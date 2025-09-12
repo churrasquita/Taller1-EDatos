@@ -6,7 +6,7 @@
 ListaAlumnos::ListaAlumnos(){
     this->head = nullptr;
 }
-void ListaAlumnos::insertarAlumno(Alumno& alumno){
+void ListaAlumnos::insertarAlumno(Alumno* alumno){
     NodoAlumno* newNode = new NodoAlumno(alumno);
     if (head == nullptr){
         head = newNode;
@@ -17,9 +17,9 @@ void ListaAlumnos::insertarAlumno(Alumno& alumno){
     while(aux->getSiguiente()!=nullptr){
         aux=aux->getSiguiente();
     }
-
     aux ->setSiguiente(newNode);
 }
+
 ListaAlumnos::~ListaAlumnos(){
     //eliminar la lista de alumnos
     NodoAlumno* aux = head;
@@ -57,25 +57,26 @@ void ListaAlumnos:: eliminarAlumno(int id){
 
 Alumno* ListaAlumnos:: buscarAlumnoId(int id){
     NodoAlumno* aux = head;
-    while (aux != nullptr && aux->getAlumno()->getId()!=id){
+    while (aux != nullptr){
         if(aux->getAlumno()->getId()== id){
-            Alumno* encontrado = aux->getAlumno();
-            return encontrado;
+             return aux->getAlumno();
         }
         aux = aux-> getSiguiente();
     }
     return nullptr;
-    
 }
 
-Alumno* ListaAlumnos:: buscarAlumnoNombre(std::string nombre){
+void ListaAlumnos:: buscarAlumnoNombre(std::string nombre){
     NodoAlumno* aux = head;
+    bool found = false;
     while (aux != nullptr){
         if(aux->getAlumno()->getNombre()== nombre){
-            Alumno* encontrado = aux->getAlumno();
-            return encontrado;
+            aux->getAlumno()->toString();
+            found = true;
         }
         aux = aux->getSiguiente();
     }
-    return nullptr;
+    if(!found){
+        std::cout<<"No existen alumnos con ese nombre."<<std::endl;
+    }
 }

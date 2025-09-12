@@ -9,9 +9,9 @@ class ListaAlumnos{
         NodoAlumno* head;
     public:
         ListaAlumnos();
-        void insertarAlumno(Alumno& alumno);
+        void insertarAlumno(Alumno* alumno);
         void eliminarAlumno(int id);
         Alumno* buscarAlumnoId(int id);
-        Alumno* buscarAlumnoNombre(std::string nombre);
+        void buscarAlumnoNombre(std::string nombre);
         ~ListaAlumnos();
 };
