@@ -1,11 +1,11 @@
 #include<iostream>
 #include "Alumno.h"
 #include "Curso.h"
-#include "Nota.h"
 #include "NodoAlumno.h"
 #include "ListaAlumnos.h"
 #include "NodoCurso.h"
 #include "ListaCursos.h"
+#include "ListaNotas.h"
 using namespace std;
 
 ListaAlumnos alumnos = ListaAlumnos();
@@ -220,22 +220,30 @@ void gestionarInscripciones(){
     }
     cout<<"Retornando... "<<endl;
 }
+
 void gestionarNotas(){
-    //vector<double> notas;
     int cant = 0;
-    bool stop = false;
     string elecc;
-    while (!stop){
-        cout<<"Gestion de notas"<<endl;
-        cout<<"Ingrese la cantidad de notas a ingresar:"<<endl;
-        cin>>cant;
-        cout<<"¿Desea seguir ingresando notas? (si/no): ";
-        cin>> elecc; 
-        if(elecc=="si"){
-            stop = true;
-            break;
-        cout<<endl;
+    cout<<"---- Registrar notas ----"<<endl;
+    cout<<"Ingrese el id del alumno: ";
+    int idAlumno; cin>>idAlumno;
+    Alumno* alumno = alumnos.buscarAlumnoId(idAlumno);
+    if(alumno == nullptr){
+        cout<<"El alumno no existe."<<endl;
+        } else{
+        int idCurso;
+        cout<<"Ingrese el id del curso a registrar su nota: ";
+        cin>>idCurso;
+        Curso* curso = cursos.buscarCursoId(idCurso);
+        if(curso == nullptr){
+           cout<<"El alumno no está inscrito en ese curso."<<endl;
+        } else {
+            cout<<"Ingrese la cantidad de notas a ingresar:"<<endl;
+            cin>>cant;
+            for(int i = 1; i<=cant; i++){
+            } 
         }
+    
     }
     cout<<"Retornando... "<<endl;
 }

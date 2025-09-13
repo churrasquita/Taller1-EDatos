@@ -4,13 +4,14 @@
 
 class Alumno{
     private:
-        int id; // identificador único del alumno
+        int id; 
         std::string nombre;
         std::string apellido;
         std::string carrera;
         std::string ingreso;
         static int contador;
         ListaCursos cursosInscritos;
+
     public:
         Alumno(std::string nombre, std:: string apellido, std:: string carrera, std:: string ingreso);
         int getId();
