@@ -67,7 +67,6 @@ void registrarCurso(){
 }
 
 void registrarAlumno(){
-    // REVISAR CONTROL ERRORES
     string nombre;
     string apellido;
     string carrera;
@@ -134,6 +133,13 @@ void gestionarAlumnos(){
         cout<<"Opcion: ";
         cin>> op;
         cout<<endl;
+        if (!(cin >> op)) { 
+            cin.clear();  
+            cin.ignore(10000, '\n');
+            cout << "Entrada invalida.";
+            cout<<endl;
+            continue;
+        }
         if (op == 1){registrarAlumno();}
         else if(op == 2){buscarAlumno();}
         else if(op ==3){eliminarAlumno();}
@@ -155,6 +161,13 @@ void gestionarCursos(){
         cout<<"Opcion: ";
         cin>> op;
         cout<<endl;
+        if (!(cin >> op)) { 
+            cin.clear();  
+            cin.ignore(10000, '\n');
+            cout << "Entrada invalida.";
+            cout<<endl;
+            continue;
+        }
         if (op == 1){registrarCurso();}
         else if(op == 2){buscarCurso();}
         else if(op ==3){eliminarCurso();}
@@ -175,6 +188,13 @@ void gestionarInscripciones(){
         cout<<"Opcion: ";
         cin>> op;
         cout<<endl;
+        if (!(cin >> op)) { 
+            cin.clear();  
+            cin.ignore(10000, '\n');
+            cout << "Entrada invalida.";
+            cout<<endl;
+            continue;
+        }
         if(op == 1){
             int id;
             cout<<"Ingrese el id del alumno a inscribir: ";
@@ -241,7 +261,7 @@ void gestionarNotas(){
             cout<<"Ingrese la cantidad de notas a ingresar:"<<endl;
             cin>>cant;
             for(int i = 1; i<=cant; i++){
-                cout<<"Ingrese la nota n° "<<i;
+                cout<<"Ingrese la nota n° "<<i<<": ";
                 double nota; cin>>nota;
                 bool registrado = curso->registrarNota(idAlumno, nota);
                 if (registrado) {
@@ -268,6 +288,13 @@ void gestionarReportes(){
         cout<<"Opcion: ";
         cin>> op;
         cout<<endl;
+        if (!(cin >> op)) { 
+            cin.clear();  
+            cin.ignore(10000, '\n');
+            cout << "Entrada invalida.";
+            cout<<endl;
+            continue;
+        }
         if(op == 1){
             cout<<"Ingrese la carrera: ";
             string carrera; cin>> carrera;
@@ -337,6 +364,13 @@ int main(){
         cout<<"Opcion: ";
         cin>> op;
         cout<<endl;
+        if (!(cin >> op)) { 
+            cin.clear();  
+            cin.ignore(10000, '\n');
+            cout << "Entrada invalida.";
+            cout<<endl;
+            continue;
+        }
         if (op == 1){gestionarAlumnos();}
         else if(op == 2){gestionarCursos();}
         else if(op == 3){gestionarInscripciones();}
@@ -348,4 +382,4 @@ int main(){
     }
     cout<<"Gracias por utilizar el sistema :)!"<<endl;
     return 0;
-}   
+}  
