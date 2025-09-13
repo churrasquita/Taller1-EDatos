@@ -241,6 +241,7 @@ void gestionarNotas(){
             cout<<"Ingrese la cantidad de notas a ingresar:"<<endl;
             cin>>cant;
             for(int i = 1; i<=cant; i++){
+                cout<<"Ingrese la nota n° "<<i;
                 double nota; cin>>nota;
                 bool registrado = curso->registrarNota(idAlumno, nota);
                 if (registrado) {

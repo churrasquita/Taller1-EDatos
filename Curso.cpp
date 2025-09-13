@@ -21,7 +21,7 @@ std::string Curso::getCarrera(){return carrera;}
 std::string Curso::getProfesor(){ return profesor;}
 void Curso:: inscribirAlumno(Alumno* alumno){
     if(this->cantInscritos>=this->maxEstudiantes){
-        std::cout<<"El curso está completo!"<<std::endl;
+        std::cout<<"El curso esta completo!"<<std::endl;
         return;
     }
     this->alumnosCurso.insertarAlumno(alumno);
