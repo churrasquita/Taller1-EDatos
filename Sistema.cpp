@@ -241,6 +241,13 @@ void gestionarNotas(){
             cout<<"Ingrese la cantidad de notas a ingresar:"<<endl;
             cin>>cant;
             for(int i = 1; i<=cant; i++){
+                double nota; cin>>nota;
+                bool registrado = curso->registrarNota(idAlumno, nota);
+                if (registrado) {
+                    cout << "Nota registrada con éxito." << endl;
+                } else {
+                    cout << "No se pudo registrar la nota." << endl;
+                }
             } 
         }
     
@@ -251,15 +258,64 @@ void gestionarNotas(){
 void gestionarReportes(){
     int op = 0;
     while (op != 5){
-        cout<<"Gestion de reportes 📚"<<endl;
-        cout<<"1) Obtener todos los alumnos de una carrera"<<endl;
-        cout<<"2) Obtener todos los cursos de un alumno"<<endl;
-        cout<<"3) Promedio de notas de un alumno en un curso"<<endl;
-        cout<<"4) Promedio de notas general"<<endl;
-        cout<<"6) Retornar al menu general"<<endl;
+        cout<<"Gestion de reportes"<<endl;
+        cout<<"1) Obtener todos los alumnos de una carrera";
+        cout<<"2) Obtener todos los cursos de un alumno";
+        cout<<"3) Promedio de notas de un alumno en un curso";
+        cout<<"4) Promedio de notas general";
+        cout<<"5) Retornar al menu general";
         cout<<"Opcion: ";
         cin>> op;
         cout<<endl;
+        if(op == 1){
+            cout<<"Ingrese la carrera: ";
+            string carrera; cin>> carrera;
+            alumnos.buscarCarrera(carrera);
+            cout << endl;
+        }else if(op == 2){
+            int id;
+            cout << "Ingrese el id del alumno: ";
+            cin >> id;
+            Alumno* alumno = alumnos.buscarAlumnoId(id);
+            if(alumno != nullptr){
+                alumno->getCursosInscritos();
+            }else{
+                cout<<"Alumno no encontrado." <<endl;
+            }
+        }else if(op == 3){
+            int id;
+            cout << "Ingrese el id del alumno: ";
+            cin >> id;
+            NodoAlumno* alumno = alumnos.buscarNodoAlumno(id);
+            if(alumno != nullptr){
+                int idCurso;
+                cout<<"Ingrese el id del curso a buscar: ";
+                cin>>idCurso;
+                Curso* curso = cursos.buscarCursoId(idCurso);
+                if(curso == nullptr){
+                    cout<<"El curso no existe."<<endl;
+                } else {
+                    double prom = curso->promedioAlumno(id);
+                    cout<<"Promedio del alumno en el curso: "<<curso->getNombre()<<": "<<prom<<endl;
+                }   
+                alumno->getNotas();
+            }else{
+                cout<<"Alumno no encontrado." <<endl;
+            }
+        } else if (op == 4){
+             int id;
+            cout << "Ingrese el id del alumno para calcular su promedio general: ";
+            cin >> id;
+            NodoAlumno* alumno = alumnos.buscarNodoAlumno(id);
+            if(alumno != nullptr){
+                alumno->getNotas();
+            }else{
+                cout<<"Alumno no encontrado." <<endl;
+            }
+        } else if (op != 1 && op != 2 && op != 3 && op != 4 && op != 5){
+            cout<<"Opción inválida, intente nuevamente." <<endl;
+        }
+        
     }
     cout<<"Retornando... "<<endl;
 }

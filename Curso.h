@@ -10,7 +10,6 @@ class Curso{
         std::string carrera;
         std::string profesor;
         static int contador;
-
         int cantInscritos;
         ListaAlumnos alumnosCurso;
        
@@ -24,5 +23,7 @@ class Curso{
         void toString();
         void inscribirAlumno(Alumno* alumno);
         bool eliminarAlumnoCurso(Alumno* alumno);
+        bool registrarNota(int idAlumno, double nota);
+        double promedioAlumno(int idAlumno);
         ~Curso(); 
 };

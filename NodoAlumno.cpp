@@ -1,6 +1,6 @@
 #include "NodoAlumno.h"
-#include <string>
 #include "Alumno.h"
+#include <string>
 
 NodoAlumno::NodoAlumno(Alumno* alumno){
     this->alumno= alumno;
@@ -9,6 +9,7 @@ NodoAlumno::NodoAlumno(Alumno* alumno){
 NodoAlumno* NodoAlumno::getSiguiente(){ return this-> siguiente;}
 void NodoAlumno::setSiguiente(NodoAlumno* alumno){this->siguiente = alumno;}
 Alumno* NodoAlumno:: getAlumno(){return this->alumno;}
+ListaNotas& NodoAlumno::getNotas() {return notas;}
 NodoAlumno:: ~NodoAlumno(){
     delete alumno;
     alumno = nullptr; 

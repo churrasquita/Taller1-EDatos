@@ -13,5 +13,7 @@ class ListaAlumnos{
         Alumno* buscarAlumnoId(int id);
         void buscarAlumnoNombre(std::string nombre);
         bool eliminarInscripciones(int idAlumno);
+        NodoAlumno* buscarNodoAlumno(int id);
+        void buscarCarrera(std:: string carrera);
         ~ListaAlumnos();
 };

@@ -77,3 +77,15 @@ void ListaCursos:: buscarCursoNombre(std::string nombre){
         std::cout<<"No existen cursos con ese nombre."<<std::endl;
     }
 }
+
+void ListaCursos:: getCursos(){
+    NodoCurso* aux = head;
+    if (aux == nullptr) {
+        std::cout << "El alumno no está inscrito en ningún curso." << std::endl;
+        return;
+    }
+    while (aux != nullptr) {
+        aux->getCurso()->toString();
+        aux = aux->getSiguiente();
+    }
+}

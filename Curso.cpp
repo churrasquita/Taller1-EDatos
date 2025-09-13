@@ -43,4 +43,20 @@ bool Curso::eliminarAlumnoCurso(Alumno* alumno){
 void Curso::toString(){
     std::cout<<"id: "<<id<<" /Curso: "<<nombre<<" /Max estudiantes: "<<maxEstudiantes<<" /Carrera:"<< carrera<<"/Profesor: "<<profesor<<std::endl;
 }
+
+bool Curso:: registrarNota(int idAlumno, double nota){
+    if(nota<1.0 || nota>7.0){
+        return false;
+    }
+    NodoAlumno* nodoAlumno = alumnosCurso.buscarNodoAlumno(idAlumno);
+    if (nodoAlumno == nullptr) return false;
+    nodoAlumno->getNotas().insertarNotas(nota);
+    return true;
+}
+double Curso::promedioAlumno(int idAlumno) {
+        NodoAlumno* alumno= alumnosCurso.buscarNodoAlumno(idAlumno);
+        if (alumno == nullptr) return 0.0;
+        return alumno->getNotas().calcularPromedio();
+    }
+
 Curso::~Curso(){}

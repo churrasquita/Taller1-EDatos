@@ -94,3 +94,28 @@ bool ListaAlumnos:: eliminarInscripciones(int idAlumno){
     delete aux;
     return true;
 }
+NodoAlumno* ListaAlumnos::buscarNodoAlumno(int id) {
+    NodoAlumno* aux = head;
+    while (aux != nullptr) {
+        if (aux->getAlumno()->getId() == id) return aux;
+        aux = aux->getSiguiente();
+    }
+    return nullptr;
+}
+
+void ListaAlumnos::buscarCarrera(std:: string carrera){
+     NodoAlumno* aux = head;
+     bool found = false;
+
+    while(aux != nullptr) {
+        if (aux -> getAlumno() -> getCarrera() == carrera) {
+            aux->getAlumno()->toString();
+            found = true;
+        }
+        aux = aux->getSiguiente();
+    }
+    if (!found) {
+        std::cout << "No existen alumnos en la carrera " << carrera << std::endl;
+    }
+
+}

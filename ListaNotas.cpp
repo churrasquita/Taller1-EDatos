@@ -35,8 +35,16 @@ double ListaNotas:: calcularPromedio(){
     }
     NodoNota* aux = head;
     double sum = 0.0;
+    int contador = 0;
     while(aux!=nullptr){
         sum += aux->getNota();
         aux = aux -> getSiguiente();
+        contador ++;
+    }
+    if (contador!= 0){
+        return sum/contador;
+    }
+    else{
+        return 0.0;
     }
 }

@@ -19,6 +19,7 @@ class Alumno{
         std::string getApellido();
         std::string getCarrera();
         std::string getIngreso();
+        void getCursosInscritos();
         void inscribirC(Curso* curso);
         void eliminarC(int idCurso);
         void toString();

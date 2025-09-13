@@ -30,3 +30,7 @@ void Alumno:: eliminarC(int idCurso){
     cursosInscritos.eliminarCurso(idCurso);
 }
 int Alumno:: getId(){return id;}
+void Alumno:: getCursosInscritos(){
+    std::cout<<"Cursos del alumno "<< this->nombre << " (" << this->id << "):" << std::endl;
+    this->cursosInscritos.getCursos();
+}

@@ -12,5 +12,6 @@ class ListaCursos{
         bool eliminarCurso(int id);
         Curso* buscarCursoId(int id);
         void buscarCursoNombre(std::string nombre);
+        void getCursos();
         ~ListaCursos();
 };
